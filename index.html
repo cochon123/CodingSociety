@@ -3,47 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome To coding society</title>
+    <title>Welcome To Coding Society</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>WELCOME TO THE CODING SOCIETY</h1>
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="logo">Coding Society</span>
+            <div class="nav-controls">
+                <button class="chatbot-toggle" title="Open ChatBot">💬</button>
+                <button class="music-toggle" title="Toggle Music Player">🎵</button>
+                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+                <div class="language-selector">
+                    <button class="language-toggle" onclick="toggleLanguageMenu()">🌐</button>
+                    <div class="language-menu" id="languageMenu">
+                        <button class="lang-option" data-lang="en" onclick="changeLanguage('en')">English</button>
+                        <button class="lang-option" data-lang="fr" onclick="changeLanguage('fr')">Français</button>
+                        <button class="lang-option" data-lang="de" onclick="changeLanguage('de')">Deutsch</button>
+                        <button class="lang-option" data-lang="es" onclick="changeLanguage('es')">Español</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <p>It is a community where everyone who use linux can come share Ideas and participate to stimulating project</p>
+    <div class="music-player" id="musicPlayer">
+        <div class="player-header">
+            <h3>🎵 Background Music</h3>
+            <button class="close-player" onclick="toggleMusicPlayer()">✕</button>
+        </div>
+        <div class="player-content">
+            <audio id="audioPlayer" controls>
+                <source src="" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="playlist">
+                <h4>Choose a track:</h4>
+                <div class="track-buttons">
+                    <button class="track-btn" data-track="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" data-name="Epic Adventure">🎸 Epic Adventure</button>
+                    <button class="track-btn" data-track="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" data-name="Chill Vibes">☀️ Chill Vibes</button>
+                    <button class="track-btn" data-track="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" data-name="Focus Mode">💻 Focus Mode</button>
+                    <button class="track-btn" data-track="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" data-name="Lofi Study">📚 Lofi Study</button>
+                    <button class="track-btn" data-track="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" data-name="Tech Beats">⚡ Tech Beats</button>
+                </div>
+            </div>
+            <div class="volume-control">
+                <label for="volumeSlider">Volume:</label>
+                <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+                <span id="volumeValue">50%</span>
+            </div>
+        </div>
+    </div>
 
-    <h2>Requirement to join</h2>
-    <ul>
-        <li>Being a human</li>
-        <li>Use linux as your main operating system</li>
-        <li>That's it</li>
-    </ul>
+    <header class="hero">
+        <div class="coding-background">
+            <div class="code-line code-line-1">def create_magic():</div>
+            <div class="code-line code-line-2">    return "Innovation" + "Collaboration"</div>
+            <div class="code-line code-line-3">class CodingSociety:</div>
+            <div class="code-line code-line-4">    mission = "Build Together"</div>
+            <div class="code-line code-line-5">while True:</div>
+            <div class="code-line code-line-6">    learn() → grow() → succeed()</div>
+            <div class="code-line code-line-7">for member in community:</div>
+            <div class="code-line code-line-8">    member.skills.expand()</div>
+            <div class="code-line code-line-9">if passion and dedication:</div>
+            <div class="code-line code-line-10">    future = "limitless"</div>
+        </div>
+        <h1 class="animate-title" data-translate="hero_title">WELCOME TO THE CODING SOCIETY</h1>
+        <p class="subtitle" data-translate="hero_subtitle">A community for Linux enthusiasts and developers</p>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </header>
 
-    <h2>Founders</h2>
-    <ul>
-        <li>Santiago : Just a chill guy who love french girls</li>
-        <li>Christian : Our Father</li>
-        <li>Zabdiel : Just a annoying guy</li>
-        <li>Kayden : ...</li>
-        <li>Pierre : Just a chill guy</li>
-    </ul>
+    <main class="container">
+        <section class="card fade-in">
+            <h2 data-translate="about_heading">What We're About</h2>
+            <div class="about-content">
+                <p data-translate="about_description">The Coding Society is more than just a tech community—we're a movement of passionate developers, designers, and innovators who believe in the power of open-source technology and human connection.</p>
+                <div class="about-values">
+                    <div class="value-box">
+                        <h3 data-translate="value_innovation_title">💡 Innovation Through Collaboration</h3>
+                        <p data-translate="value_innovation_desc">We believe the best ideas come from diverse minds working together. Whether you're a Python wizard, Linux expert, or UX designer, your perspective matters. We create an environment where you can share knowledge, challenge ideas, and build something extraordinary.</p>
+                    </div>
+                    <div class="value-box">
+                        <h3 data-translate="value_connections_title">🤝 Building Real Connections</h3>
+                        <p data-translate="value_connections_desc">In a digital world, we prioritize genuine human relationships. We're not just writing code—we're building friendships, mentorships, and professional networks that will last a lifetime. Every member is valued, heard, and supported.</p>
+                    </div>
+                    <div class="value-box">
+                        <h3 data-translate="value_fun_title">🎉 Coding with Fun & Community Spirit</h3>
+                        <p data-translate="value_fun_desc">We prove that tech doesn't have to be serious and isolated. Our community spaces—class groups, movie nights, gaming sessions, and outings—bring people together to relax, laugh, and enjoy life while learning something new.</p>
+                    </div>
+                    <div class="value-box">
+                        <h3 data-translate="value_empowerment_title">🚀 Empowering the Next Generation</h3>
+                        <p data-translate="value_empowerment_desc">We're committed to lifting each other up. From beginners to experts, everyone has a role to play. Our mentorship culture ensures that knowledge flows freely and everyone has the opportunity to grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Goals</h2>
-    <ul>
-        <li>Becoming Billionaires</li>
-    </ul>
+        <section class="card fade-in" style="animation-delay: 0.1s">
+            <h2 data-translate="founders_heading">Meet Our Founders</h2>
+            <p class="section-subtitle" data-translate="founders_subtitle">The visionaries behind the Coding Society</p>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <img src="santago.jpg" alt="Santiago" class="founder-photo">
+                    <h3>Santiago</h3>
+                    <p class="role" data-translate="santiago_role">Community Builder & Visionary</p>
+                    <p class="bio" data-translate="santiago_bio">A laid-back tech enthusiast who brings the chill vibes to our community. Passionate about connecting people and fostering international tech friendships. When not coding, you'll find him enjoying the finer things in life.</p>
+                    <div class="founder-skills">
+                        <span class="skill">Networking</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Gaming</span>
+                        <span class="skill">Wireshark</span>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <img src="Christain.jpg" alt="Christian" class="founder-photo">
+                    <h3>Christian</h3>
+                    <p class="role" data-translate="christian_role">Chief Mentor & Father Figure</p>
+                    <p class="bio" data-translate="christian_bio">The guiding force and moral compass of our community. With years of experience in software development, he mentors the next generation of developers. His wisdom and guidance have shaped the foundation of the Coding Society.</p>
+                    <div class="founder-skills">
+                        <span class="skill">Leadership</span>
+                        <span class="skill">Mentorship</span>
+                        <span class="skill">Architecture</span>
+                        <span class="skill">C++</span>
+                        <span class="skill">DevOps</span>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <img src="Zabdiel.jpg" alt="Zabdiel" class="founder-photo">
+                    <h3>Zabdiel</h3>
+                    <p class="role" data-translate="zabdiel_role">Creative Chaos Manager</p>
+                    <p class="bio" data-translate="zabdiel_bio">The spirited troublemaker who keeps things interesting! With an unconventional approach to problem-solving, Zabdiel brings creativity and unpredictability to the team. Life is never boring when he's around.</p>
+                    <div class="founder-skills">
+                        <span class="skill">Innovation</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Gaming</span>
+                        <span class="skill">Web Development</span>
+                        <span class="skill">Creativity</span>
+                    </div>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-avatar">🔮</div>
+                    <h3>Kayden</h3>
+                    <p class="role" data-translate="kayden_role">The Enigma</p>
+                    <p class="bio" data-translate="kayden_bio">Mysterious and intriguing, Kayden operates in the shadows of innovation. Rumored to have extraordinary skills in multiple programming languages, their contributions speak louder than words ever could.</p>
+                    <div class="founder-skills">
+                        <span class="skill">Full Stack</span>
+                        <span class="skill">Python</span>
+                        <span class="skill">Gaming</span>
+                        <span class="skill">Mystery Tech</span>
+                        <span class="skill">Dark Arts</span>
+                    </div>
+                </div>
+                <div class="founder-card">
+                   <img src="pieer.jpg" alt="pieer" class="founder-photo">
+                    <h3>Pierre</h3>
+                    <p class="role" data-translate="pierre_role">Linux Specialist & Vibe Coder</p>
+                    <p class="bio" data-translate="pierre_bio">Pierre is our Linux systems expert and pioneering practitioner of "vibe coding"—writing code with flow, intuition, and creative energy. He brings a calm yet passionate approach to development, merging technical expertise with artistic sensibility.</p>
+                    <div class="founder-skills">
+                        <span class="skill">Linux Systems</span>
+                        <span class="skill">Vibe Coding</span>
+                        <span class="skill">System Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Content</h2>
-    <ul>
-        <li>Class groups</li>
-        <li>Python-church</li>
-        <li>Its-church</li>
-        <li>UX-church</li>
-        <li>Chat</li>
-        <li>Outing</li>
-        <li>Anime/movie/series</li>
-        <li>Games</li>
-    </ul>
+        <section class="card fade-in" style="animation-delay: 0.2s">
+            <h2>🌟 Honorary Member</h2>
+            <p class="section-subtitle">Celebrating our valued community member</p>
+            <div class="honorary-container">
+                <div class="honorary-card">
+                    <div class="honorary-image">
+                        <img src="logan.jpg" alt="Logan" class="honorary-photo">
+                    </div>
+                    <div class="honorary-info">
+                        <h3>Logan</h3>
+                        <p class="honorary-codename">⚡ Electro Wizard ⚡</p>
+                        <p class="honorary-title">Community Hero & Electrical Engineering Enthusiast</p>
+                        <p class="honorary-bio">Logan is a dedicated member of our community with a passion for electrical engineering. His goal is to advance the field of electrical engineering through innovation, collaboration, and knowledge sharing. His commitment to excellence, collaborative spirit, and support for fellow members make him an invaluable part of the Coding Society. We're honored to recognize his achievements and contributions.</p>
+                        <div class="honorary-skills">
+                            <span class="skill">Electrical Engineering</span>
+                            <span class="skill">Innovation</span>
+                            <span class="skill">Community Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Click to join</h2>
-    <a href="https://discord.gg/Yycup77j"><img src="https://www.svgrepo.com/show/349338/discord.svg" alt="Discord SVG File" title="Discord SVG File" width="150" height="150" style="padding:10px;cursor:pointer"></a>
+        <section class="card fade-in" style="animation-delay: 0.3s">
+            <h2 data-translate="goals_heading">Our Goals & Vision</h2>
+            <div class="goals-content">
+                <div class="goal-highlight" data-translate="goals_highlight">🎯 Becoming Billionaires</div>
+                <p class="goal-subtext" data-translate="goals_subtext">Sure, we dream big financially, but more importantly...</p>
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <h3 data-translate="goal_connect">🌍 Connect Global Tech Communities</h3>
+                        <p data-translate="goal_connect_desc">Create bridges between developers worldwide, fostering international collaboration and friendships that transcend borders and time zones.</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 data-translate="goal_democratize">📚 Democratize Tech Knowledge</h3>
+                        <p data-translate="goal_democratize_desc">Make advanced tech education accessible to everyone, regardless of background. We believe great technology comes from diverse perspectives.</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 data-translate="goal_opensource">💻 Build Impactful Open-Source Projects</h3>
+                        <p data-translate="goal_opensource_desc">Create software that solves real problems. From passion projects to production tools, we channel our collective talents into meaningful contributions.</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 data-translate="goal_fun">😊 Prove Tech Communities Can Be Fun</h3>
+                        <p data-translate="goal_fun_desc">Break the stereotype that tech people are lonely. We're building a community where you can geek out AND have the time of your life.</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 data-translate="goal_support">🤗 Create a Supportive Safe Space</h3>
+                        <p data-translate="goal_support_desc">Foster an environment where everyone—regardless of skill level, background, or experience—feels welcome, valued, and encouraged to be themselves.</p>
+                    </div>
+                    <div class="goal-card">
+                        <h3 data-translate="goal_leaders">🚀 Launch the Next Generation of Tech Leaders</h3>
+                        <p data-translate="goal_leaders_desc">Mentor and empower the next wave of innovators, entrepreneurs, and open-source contributors who will shape the future of technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card fade-in" style="animation-delay: 0.4s">
+            <h2 data-translate="activities_heading">Content & Activities</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <span class="icon">👥</span>
+                    <span>Class groups</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">🐍</span>
+                    <span>Python-church</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">💻</span>
+                    <span>IT-church</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">🎨</span>
+                    <span>UX-church</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">💬</span>
+                    <span>Chat</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">🚶</span>
+                    <span>Outing</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">📺</span>
+                    <span>Anime/movie/series</span>
+                </div>
+                <div class="content-item">
+                    <span class="icon">🎮</span>
+                    <span>Games</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card fade-in" style="animation-delay: 0.5s">
+            <h2 data-translate="rules_heading">Community Guidelines & Rules</h2>
+            <div class="rules-content">
+                <p data-translate="rules_intro">To maintain a positive and productive community, we ask all members to adhere to these guidelines:</p>
+                <div class="rules-grid">
+                    <div class="rule-item">
+                        <h3 data-translate="rule_respect_title">🤝 Respect & Inclusivity</h3>
+                        <p data-translate="rule_respect_desc">Treat all members with respect and dignity. We welcome diverse backgrounds, perspectives, and experiences. Zero tolerance for discrimination, harassment, or hate speech.</p>
+                    </div>
+                    <div class="rule-item">
+                        <h3 data-translate="rule_communication_title">💬 Constructive Communication</h3>
+                        <p data-translate="rule_communication_desc">Engage in meaningful discussions. Provide constructive feedback, avoid personal attacks, and focus on ideas rather than individuals.</p>
+                    </div>
+                    <div class="rule-item">
+                        <h3 data-translate="rule_ontopic_title">📋 Stay On Topic</h3>
+                        <p data-translate="rule_ontopic_desc">Keep conversations relevant to the channel or group. Off-topic discussions should be moved to appropriate spaces. Respect the purpose of each community channel.</p>
+                    </div>
+                    <div class="rule-item">
+                        <h3 data-translate="rule_privacy_title">🔒 Confidentiality & Privacy</h3>
+                        <p data-translate="rule_privacy_desc">Protect member privacy. Don't share personal information without consent. Respect intellectual property and confidential project information.</p>
+                    </div>
+                    <div class="rule-item">
+                        <h3 data-translate="rule_nospam_title">📚 No Spam or Self-Promotion</h3>
+                        <p data-translate="rule_nospam_desc">Avoid excessive self-promotion or spam. Legitimate sharing is encouraged, but must be relevant and provide value to the community.</p>
+                    </div>
+                    <div class="rule-item">
+                        <h3 data-translate="rule_standards_title">⚖️ Follow Community Standards</h3>
+                        <p data-translate="rule_standards_desc">Comply with all Discord and platform rules. Follow instructions from moderators. Violations may result in warnings, mutes, or removal from the community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card discord-section fade-in" style="animation-delay: 0.55s">
+            <h2 data-translate="discord_heading">Ready to Join?</h2>
+            <p data-translate="discord_text">Click the Discord icon below to become part of our amazing community!</p>
+            <a href=https://discord.gg/qZnhjQD9 class="discord-link">
+                <img src="https://www.svgrepo.com/show/349338/discord.svg" alt="Discord" title="Join Our Discord Server">
+                <span class="pulse" data-translate="discord_button">Join Now</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-translate="footer_text">&copy; 2026 Coding Society. Building the future, one line at a time.</p>
+    </footer>
+
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-header">
+            <h3>🤖 CodeBot AI</h3>
+            <button class="chatbot-close" onclick="toggleChatbot()">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <p>👋 Hello! I'm CodeBot, your AI guide for the Coding Society. Ask me anything about our community, founders, activities, or how to join!</p>
+            </div>
+        </div>
+        <div class="chatbot-suggestions" id="chatbotSuggestions">
+            <button class="suggestion-btn" onclick="sendSuggestion('What is Coding Society?')">About Us</button>
+            <button class="suggestion-btn" onclick="sendSuggestion('Who are the founders?')">Founders</button>
+            <button class="suggestion-btn" onclick="sendSuggestion('How do I join?')">Join Us</button>
+            <button class="suggestion-btn" onclick="sendSuggestion('What activities do you have?')">Activities</button>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input-field">
+            <button class="chat-send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
